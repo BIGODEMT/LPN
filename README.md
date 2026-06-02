@@ -1,5 +1,23 @@
 # Projeto P2 - Assistente Virtual
 
+## Sobre o Projeto
+
+**Aurora** é um assistente virtual inteligente desenvolvido em Python que combina interface gráfica (Tkinter) e reconhecimento de voz para interagir com os usuários de forma natural. O projeto foi desenvolvido como trabalho acadêmico em programação e demonstra conceitos de processamento de linguagem natural, síntese de voz e desenvolvimento de aplicações multimídia.
+
+### O que ele faz
+
+O assistente Aurora é capaz de:
+- 🎤 **Reconhecer e processar comandos por voz** usando o microfone
+- 💬 **Responder em voz alta** e de forma textual através de síntese de voz
+- 📝 **Gerenciar anotações** salvando notas em arquivo de texto
+- 📅 **Consultar agenda e eventos** do dia
+- 🕐 **Fornecer informações** como data, hora e dados da Wikipédia
+- 🔍 **Realizar pesquisas** no Google e YouTube
+- 🎵 **Sugerir e abrir músicas** em plataformas de streaming
+- 🤖 **Responder perguntas** de forma amigável e contextual
+
+O projeto oferece **duas interfaces de uso**: uma versão com interface gráfica visual (ideal para demonstração) e uma versão por voz pura (mais interativa).
+
 ## Identificação
 - Nome do assistente: Aurora
 - Dupla: Alexsandro de Jesus Abreu   e  Breno Dario Pontes Silva
