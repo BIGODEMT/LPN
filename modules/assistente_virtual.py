@@ -129,16 +129,38 @@ class AssistenteVirtual:
             return apresentacao_criativa
 
         if any(palavra in texto for palavra in lembretes):
+            anotacao = ''
             if ':' in mensagem:
                 anotacao = mensagem.split(':', 1)[1].strip()
+            else:
+                palabras_ordenadas = sorted(lembretes, key=len, reverse=True)
+                for pw in palabras_ordenadas:
+                    if pw in texto:
+                        idx = texto.find(pw)
+                        anotacao = mensagem[idx + len(pw):].strip()
+                        if anotacao.startswith(':'):
+                            anotacao = anotacao[1:].strip()
+                        break
+            if anotacao:
                 return self.registrar_lembrete(anotacao)
-            return 'Digite "anotar: sua mensagem" para salvar um lembrete.'
+            return 'Digite "anotar: sua mensagem" ou diga "anotar [sua mensagem]" para salvar um lembrete.'
 
         if any(palavra in texto for palavra in ajuda):
+            consulta = ''
             if ':' in mensagem:
                 consulta = mensagem.split(':', 1)[1].strip()
+            else:
+                palabras_ordenadas = sorted(ajuda, key=len, reverse=True)
+                for pw in palabras_ordenadas:
+                    if pw in texto:
+                        idx = texto.find(pw)
+                        consulta = mensagem[idx + len(pw):].strip()
+                        if consulta.startswith(':'):
+                            consulta = consulta[1:].strip()
+                        break
+            if consulta:
                 return self.pesquisar(consulta)
-            return 'Digite "pesquisar: assunto" para abrir uma busca no Google.'
+            return 'Digite "pesquisar: assunto" ou diga "pesquisar [assunto]" para abrir uma busca no Google.'
 
         if any(palavra in texto for palavra in horas):
             agora = datetime.now()
@@ -164,10 +186,21 @@ class AssistenteVirtual:
             return self.consultar_agenda()
 
         if any(palavra in texto for palavra in musica):
+            consulta = ''
             if ':' in mensagem:
                 consulta = mensagem.split(':', 1)[1].strip()
             else:
-                consulta = 'música relaxante'
+                palabras_ordenadas = sorted(musica, key=len, reverse=True)
+                for pw in palabras_ordenadas:
+                    pw_clean = pw.rstrip(':').strip()
+                    if pw_clean and pw_clean in texto:
+                        idx = texto.find(pw_clean)
+                        consulta = mensagem[idx + len(pw_clean):].strip()
+                        if consulta.startswith(':'):
+                            consulta = consulta[1:].strip()
+                        break
+                if not consulta:
+                    consulta = 'música relaxante'
             return self.tocar_musica(consulta)
 
         if texto in {'oi', 'olá', 'ola', 'bom dia', 'boa tarde', 'boa noite'}:

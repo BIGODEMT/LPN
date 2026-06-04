@@ -10,7 +10,7 @@ horas = ['que horas são', 'hora', 'hora agora', 'que horas são agora', 'qual �
 data = ['que dia é hoje', 'que dia é', 'que dia hoje']
 analysis_mode = ['modo de emoção', 'ativar emoção', 'ativar emoção por voz', 'emocao']
 agenda = ['eventos hoje', 'agenda hoje', 'agenda', 'compromissos hoje', 'eventos de hoje', 'compromissos de hoje', 'eventos para hoje']
-musica = ['tocar música', 'tocar:', 'toca uma música', 'colocar música', 'abrir música', 'playlist', 'música relaxante', 'música']
+musica = ['tocar música', 'tocar:', 'tocar', 'toca uma música', 'colocar música', 'abrir música', 'playlist', 'música relaxante', 'música']
 voz = ['ouvir voz', 'escutar', 'escute', 'microfone', 'voz', 'fala']
 quem_eh = ['quem você é', 'quem é você', 'quem você é mesmo', 'me conta sobre você', 'conte sobre você', 'fale sobre você', 'quem é você afinal', 'qual é seu nome']
 
